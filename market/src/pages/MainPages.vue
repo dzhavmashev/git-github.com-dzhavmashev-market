@@ -1,6 +1,8 @@
 <template>
   <div>
-    <router-view></router-view>
+    <div>MainPages</div>
+    <router-link to="/">
+    </router-link>
   </div>
 </template>
 
