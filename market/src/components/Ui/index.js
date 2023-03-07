@@ -1,5 +1,3 @@
-import MyButton from './MyButton.vue'
+import MyButton from "./MyButton.vue"
 
-export default [
-    MyButton
-]
+export default [MyButton]

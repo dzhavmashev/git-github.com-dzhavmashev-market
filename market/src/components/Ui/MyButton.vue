@@ -22,6 +22,5 @@ export default {
   margin: 2px;
   border: none;
   cursor: pointer;
-    
 }
 </style>
