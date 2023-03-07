@@ -1,14 +1,18 @@
 <template>
   <div>
-    <div>MainPages</div>
-    <router-link to="/">
-    </router-link>
+    <header-part></header-part>
   </div>
 </template>
 
 <script>
+import HeaderPart from "../components/HeaderPart.vue";
 export default {
+  components: { HeaderPart },
 };
 </script>
 
-<style></style>
+<style>
+#body {
+  margin: 0;
+}
+</style>

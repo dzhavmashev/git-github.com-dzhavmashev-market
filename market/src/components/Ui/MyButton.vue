@@ -13,9 +13,11 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
 .my_btn {
-    padding: 5px;
-    border: 1px solid black;
-    
+  border: 1px solid black;
+  padding: 0;
+  font-family: "Shadows Into Light", cursive;
+  cursor: pointer;
 }
 </style>
