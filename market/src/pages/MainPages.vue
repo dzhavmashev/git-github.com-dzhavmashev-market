@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>MainPages</div>
+    <header-part></header-part>
     <div><categories @sendGenre="makeFilter"></categories>
     <books v-bind:books="filterGenres" />
     </div>
@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import HeaderPart from "../components/HeaderPart.vue";
 import Storage from "../storage.json";
 import Categories from "../components/Categories.vue";
 import Books from "../components/Books.vue";
@@ -20,6 +21,7 @@ export default {
     };
   },
   components: {
+    HeaderPart,
     Categories,
     Books,
   },
@@ -40,9 +42,12 @@ export default {
 </script>
 
 <style>
+#body {
+  margin: 0;
+},
 .book-container {
   border: 2px solid black;
   margin: 10px;
 }
 </style>
-    
+
