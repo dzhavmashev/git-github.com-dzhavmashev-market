@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import storage from "../storage.json";
+import Storage from "../storage.json";
 export default {
   data() {
     return {
-      genres: storage.genres,
+      genres: Storage.genres,
       choosen: "",
     };
   },
