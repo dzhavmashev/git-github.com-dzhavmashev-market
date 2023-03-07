@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="my-button">
+    <button class="my_btn">
       <slot></slot>
     </button>
   </div>
@@ -13,14 +13,11 @@ export default {
 </script>
 
 <style>
-.my-button {
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+.my_btn {
+  border: 1px solid black;
+  padding: 0;
   font-family: "Shadows Into Light", cursive;
-  width: 180px;
-  height: 50px;
-  padding: 5px;
-  font-size: 16px;
-  margin: 2px;
-  border: none;
   cursor: pointer;
 }
 </style>
