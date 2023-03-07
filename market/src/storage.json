@@ -1,18 +1,50 @@
 {
+  "shops": [
+    {
+      "id": 1,
+      "address": "г. Бишкек, ул Тоголок Молдо, 54А (напротив стадиона Спартак)",
+      "phone": "+996 (312) 613333",
+      "time": "Понедельник - Пятница 08:30-17:00  Без обеда  Суббота 09:00-14:00  Выходные: Воскресенье"
+    },
+    {
+      "id": 2,
+      "address": "г. Бишкек, ул. Тыныстанова, 197 ( между ул. Токтогула и Московской)",
+      "phone": "+996 (312) 613333",
+      "time": "Понедельник - Пятница 08:30-16:00  Обед 12:00 - 13:00  Выходные: Суббота, Воскресенье"
+    },
+    {
+      "id": 3,
+      "address": "г. Бишкек, пр. Эркиндик, 59 (напротив Минфина КР)",
+      "phone": "+996 (312) 613333",
+      "time": "Понедельник - Пятница 08:30-17:00  Без обеда  Выходные: Суббота, Воскресенье"
+    },
+    {
+      "id": 4,
+      "address": "г. Бишкек, ул. Токтогула, 248",
+      "phone": "+996 (312) 613333",
+      "time": "Понедельник - Пятница 09:00-17:00  Обед 12:00 - 13:00  Выходные: Суббота, Воскресенье"
+    },
+    {
+      "id": 5,
+      "address": "г. Бишкек , пр. Чуй, 127 (1000 мелочей)",
+      "phone": "+996 (312) 613333",
+      "time": "Понедельник - Пятница 10:00-19:00  Обед 14:00 - 15:00  Выходные: Суббота, Воскресенье"
+    }
+  ],
   "genres": [
     { "id": 1, "code": "fantasy", "name": "Фэнтези" },
     { "id": 2, "code": "detectives", "name": "Детективы" },
     { "id": 3, "code": "adventures", "name": "Приключения" },
-    { "id": 4, "code": "fantastic", "name": "Фантастика"},
-    { "id": 5, "code": "business literature", "name": "Бизнес литература"},
-    { "id": 6, "code": "scientific literature", "name": "Научная литература"},
-    { "id": 7, "code": "psychology", "name": "Психология"},
-    { "id": 8, "code": "education", "name": "Образование"},
-    { "id": 9, "code": "beauty and health", "name": "Красота и Здоровье"},
-    { "id": 10, "code": "poetry", "name": "Проза"},
-    { "id": 11, "code": "novels", "name": "Романы"},
-    { "id": 12, "code": "comics and manga", "name": "Комиксы и Манга"},
-    { "id": 13, "code": "thrillers", "name": "Триллеры"}
+    { "id": 4, "code": "fantastic", "name": "Фантастика" },
+    { "id": 5, "code": "business literature", "name": "Бизнес литература" },
+    { "id": 6, "code": "scientific literature", "name": "Научная литература" },
+    { "id": 7, "code": "psychology", "name": "Психология" },
+    { "id": 8, "code": "education", "name": "Образование" },
+    { "id": 9, "code": "beauty and health", "name": "Красота и Здоровье" },
+    { "id": 10, "code": "poetry", "name": "Проза" },
+    { "id": 11, "code": "novels", "name": "Романы" },
+    { "id": 12, "code": "comics and manga", "name": "Комиксы и Манга" },
+    { "id": 13, "code": "thrillers", "name": "Триллеры" }
   ],
   "books": [
     {
@@ -23,7 +55,7 @@
       "releaseDate": "2007-03-27",
       "available": true,
       "price": "450",
-      "code":"fantastic"
+      "code": "fantastic"
     },
     {
       "id": 2,
@@ -33,7 +65,7 @@
       "releaseDate": "2005-01-01",
       "available": true,
       "price": "440",
-      "code":"scientific literature"
+      "code": "scientific literature"
     },
     {
       "id": 3,
@@ -43,7 +75,7 @@
       "releaseDate": "1986-05-20",
       "available": true,
       "price": "430",
-      "code":"education"
+      "code": "education"
     },
     {
       "id": 4,
@@ -53,7 +85,7 @@
       "releaseDate": "2008-04-01",
       "available": true,
       "price": "420",
-      "code":"fantastic"
+      "code": "fantastic"
     },
     {
       "id": 5,
@@ -63,7 +95,7 @@
       "releaseDate": "2007-04-26",
       "available": true,
       "price": "400",
-      "code":"fantastic"
+      "code": "fantastic"
     },
     {
       "id": 6,
@@ -73,7 +105,7 @@
       "releaseDate": "2019-08-24",
       "available": true,
       "price": "410",
-      "code":"adventures"
+      "code": "adventures"
     },
     {
       "id": 7,
@@ -83,7 +115,7 @@
       "releaseDate": "2009-06-09",
       "available": true,
       "price": "380",
-      "code":"novels"
+      "code": "novels"
     },
     {
       "id": 8,
@@ -93,7 +125,7 @@
       "releaseDate": "2021-03-07",
       "available": true,
       "price": "350",
-      "code":"detectives"
+      "code": "detectives"
     },
     {
       "id": 9,
@@ -103,7 +135,7 @@
       "releaseDate": "2020-01-10",
       "available": true,
       "price": "390",
-      "code":"novels"
+      "code": "novels"
     },
     {
       "id": 10,
@@ -113,7 +145,7 @@
       "releaseDate": "2021-03-02",
       "available": true,
       "price": "290",
-      "code":"novels"
+      "code": "novels"
     },
     {
       "id": 11,
@@ -123,7 +155,7 @@
       "releaseDate": "2009-11-10",
       "available": true,
       "price": "480",
-      "code":"novels"
+      "code": "novels"
     },
     {
       "id": 12,
@@ -133,7 +165,7 @@
       "releaseDate": "2009-10-02",
       "available": true,
       "price": "490",
-      "code":"novels"
+      "code": "novels"
     }
   ]
 }
