@@ -23,9 +23,7 @@
 </template>
 
 <script>
-import MyButton from './Ui/MyButton.vue';
 export default {
-  components: { MyButton },
   data() {
     return {
       show: false,
