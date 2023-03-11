@@ -1,8 +1,11 @@
 <template>
   <div>
     <header-part></header-part>
-    <div><categories @sendGenre="makeFilter"></categories>
-    <books v-bind:books="filterGenres" />
+    <div class="content">
+      <categories @sendGenre="makeFilter"></categories>
+      <div class="section">
+        <center-part><books class="book-container" v-bind:books="filterGenres" /></center-part>  
+      </div>
     </div>
   </div>
 </template>
@@ -12,7 +15,7 @@ import HeaderPart from "../components/HeaderPart.vue";
 import Storage from "../storage.json";
 import Categories from "../components/Categories.vue";
 import Books from "../components/Books.vue";
-
+import CenterPart from "../components/CenterPart.vue";
 export default {
   data() {
     return {
@@ -24,6 +27,7 @@ export default {
     HeaderPart,
     Categories,
     Books,
+    CenterPart,
   },
 
   methods: {
@@ -44,10 +48,20 @@ export default {
 <style>
 #body {
   margin: 0;
-},
+}
+
 .book-container {
   border: 2px solid black;
   margin: 10px;
 }
-</style>
 
+.content {
+  display: flex;
+}
+
+.section {
+  width: 60%;
+  border: 1px solid #d7cfe7;
+  background-color: #d7cfe7;
+}
+</style>
