@@ -1,15 +1,15 @@
 <template>
   <div class="placeholder-form">
     <div class="placeholder-container">
-    <input
-      placeholder=""
-      class="input_items"
-      v-model="newValue"
-      type="text"
-      v-on:change="$emit('input', $event.target.value)"
-    />
-    <label>Поиск товара</label>
-  </div>
+      <input
+        v-model="newValue"
+        v-on:change="$emit('input', $event.target.value)"
+        placeholder=""
+        class="input_items"
+        type="text"
+      />
+      <label>Поиск товара</label>
+    </div>
   </div>
 </template>
 
@@ -20,12 +20,16 @@ export default {
     return {
       newValue: "",
     };
-  },
-};
+  }
+  }
 </script>
 
 <style>
 .placeholder-form {
+  box-sizing: border-box;
+}
+.placeholder-container {
+  position: relative;
     box-sizing: border-box;
 }
 .placeholder-container {
@@ -38,6 +42,7 @@ export default {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 16px;
+  height: 38px;
   height: 37px;
   outline: 0;
   padding: 0 20px;
