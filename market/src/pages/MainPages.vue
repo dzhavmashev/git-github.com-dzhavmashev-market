@@ -1,15 +1,15 @@
 <template>
   <div>
     <div>
-      <my-button v-if="logged == false" @click ="openModal()">Войти</my-button>
-      <my-button v-else @click="navOpen=!navOpen">{{showLogged}}</my-button>
+      <custom-button v-if="logged == false" @click ="openModal()">Войти</custom-button>
+      <custom-button v-else @click="navOpen=!navOpen">{{showLogged}}</custom-button>
       <nav v-show="navOpen">
         <ul>
           <li>Личный кабинет</li>
           <li>Выйти</li>
         </ul>
       </nav>
-      <my-modal v-bind:modal="modalVisible" @closeModal="closeModal">
+      <custom-modal v-bind:modal="modalVisible" @closeModal="closeModal">
           <auth-form
           v-if="regForm === false"
           @closeModal="closeModal"
@@ -20,7 +20,7 @@
           @closeModal="closeModal"
           @openAuthForm="openAuthForm"
           @checkUser="checkUser" />
-          </my-modal>
+          </custom-modal>
       <categories @sendGenre="makeFilter"></categories>
       <books v-bind:books="filterGenres" />
     </div>
@@ -33,7 +33,9 @@ import Categories from "../components/Categories.vue";
 import Books from "../components/Books.vue";
 import AuthForm from "../components/AuthForm.vue";
 import RegistrForm from "../components/RegistrForm.vue";
-import MyModal from "../components/UI/MyModal.vue";
+import CustomButton from '../components/UI/CustomButton.vue';
+import CustomModal from '../components/UI/CustomModal.vue';
+
 
 export default {
   data() {
@@ -52,7 +54,8 @@ export default {
     Books,
     AuthForm,
     RegistrForm,
-    MyModal,
+    CustomButton,
+    CustomModal,
   },
 
   methods: {

@@ -1,17 +1,19 @@
 <template>
   <div>
-    <my-button
+    <custom-button
       v-for="genre in genres"
       :key="genre.id"
       @click="sendGenre(genre)">
       {{ genre.name }}
-    </my-button>
+    </custom-button>
   </div>
 </template>
 
 <script>
 import Storage from "../storage.json";
+import CustomButton from './UI/CustomButton.vue';
 export default {
+  components: { CustomButton },
   data() {
     return {
       genres: Storage.genres,

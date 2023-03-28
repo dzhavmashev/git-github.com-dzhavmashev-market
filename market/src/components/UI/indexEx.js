@@ -1,4 +1,4 @@
-import MyButton from "./MyButton.vue"
-import MyModal from "./MyModal.vue"
+import CustomButton from "./CustomButton.vue"
+import CustomModal from "./CustomModal.vue"
 
-export default [MyButton, MyModal]
+export default [CustomButton, CustomModal]
