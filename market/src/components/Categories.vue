@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <div class="left_part">
+    <div class="bar">Жанры:</div>
     <my-button
+      class="btn_catg"
       v-for="genre in genres"
       :key="genre.id"
-      @click="sendGenre(genre)">
-      {{ genre.name }}
+      @click="sendGenre(genre)"
+    >
+      <img src="period.png" /> {{ genre.name }}:
     </my-button>
   </div>
 </template>
@@ -28,4 +31,25 @@ export default {
 </script>
 
 <style>
+.left_part {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 20%;
+}
+.bar {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 28px;
+}
+.btn_catg {
+  display: flex;
+  align-items: center;
+  border: 0px solid white;
+  font-size: 20px;
+}
+.btn_catg:focus {
+  color: grey;
+  font-size: 19px;
+}
+
 </style>

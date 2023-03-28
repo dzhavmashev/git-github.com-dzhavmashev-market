@@ -2,6 +2,8 @@
   <div class="parent" v-if="show" @click="getWindow">
     <div @click.stop class="child">
         <div class="info_div">Контакты</div>
+        <img class="icons" src="telegram.png" alt="">
+        <img class="icons" src="whatsapp.png" alt="">
         <my-button @click="clickClose">Закрыть</my-button>
     </div>
   </div>
@@ -32,6 +34,10 @@ export default {
 .info_div {
     font-family: "Shadows Into Light", cursive;
     font-size: 22px;
+}
+.icons {
+  height: 64px;
+  width: 64px;
 }
 .parent {
   display: flex;
