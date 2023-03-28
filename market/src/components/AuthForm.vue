@@ -52,7 +52,7 @@ export default {
     enterUser() {
       let users = this.usersData;
       let mail = this.email;
-      let password = this.password;
+      let password = this.MD5(this.password);
       if (this.email == "" || this.password == "") {
         this.wrongInput = true;
       } else {
@@ -66,6 +66,12 @@ export default {
           }
         } else this.wrongUser = true
       }
+    },
+    MD5(d) {
+      for (var _, m = "0123456789ABCDEF", f = "", r = 0; r < d.length; r++)
+        (_ = d.charCodeAt(r)),
+          (f += m.charAt((_ >>> 4) & 15) + m.charAt(15 & _));
+      return f;
     },
     closeModal() {
       this.$emit("closeModal", false);

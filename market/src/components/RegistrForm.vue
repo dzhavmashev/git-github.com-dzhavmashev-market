@@ -9,7 +9,9 @@
       required="required"
       autocomplete="username email"
     />
-    <p class="input-message" v-if="wrongEmail">Почтовый адрес уже используется</p>
+    <p class="input-message" v-if="wrongEmail">
+      Почтовый адрес уже используется
+    </p>
     <input
       v-model="age"
       type="number"
@@ -18,7 +20,9 @@
       required="required"
       autocomplete="user age"
     />
-    <p class="input-message" v-if="wrongAge">Возрастное ограничение <b>18+</b></p>
+    <p class="input-message" v-if="wrongAge">
+      Возрастное ограничение <b>18+</b>
+    </p>
     <input
       v-model="password"
       type="password"
@@ -27,7 +31,9 @@
       required="required"
       autocomplete="current-password"
     />
-    <p class="input-message" v-if="wrongPassword">Пароль должен состоять минимум из <b>6</b> символов</p>
+    <p class="input-message" v-if="wrongPassword">
+      Пароль должен состоять минимум из <b>6</b> символов
+    </p>
     <p class="input-message" v-if="wrongInput">Заполните все поля</p>
     <button class="continue-button" @click="addUser()">Продолжить</button>
     <div>
@@ -94,13 +100,19 @@ export default {
         this.user = {
           email: this.email,
           age: this.age,
-          password: this.password,
+          password: this.MD5(this.password),
         };
         this.usersData.push(this.user);
         localStorage.setItem("usersList", JSON.stringify(this.usersData));
         this.$emit("checkUser", mail);
-        this.closeModal()
+        this.closeModal();
       }
+    },
+    MD5(d) {
+      for (var _, m = "0123456789ABCDEF", f = "", r = 0; r < d.length; r++)
+        (_ = d.charCodeAt(r)),
+          (f += m.charAt((_ >>> 4) & 15) + m.charAt(15 & _));
+      return f;
     },
     openAuthForm() {
       this.$emit("openAuthForm", true);
