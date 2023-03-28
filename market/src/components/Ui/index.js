@@ -3,9 +3,4 @@ import LinkButton from './LinkButton.vue'
 import ModalWindow from './ModalWindow.vue'
 import MyInput from './MyInput.vue'
 
-export default [
-    MyButton,
-    LinkButton,
-    ModalWindow,
-    MyInput
-]
+export default [MyButton, LinkButton, ModalWindow, MyInput]
