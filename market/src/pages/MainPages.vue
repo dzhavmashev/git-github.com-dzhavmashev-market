@@ -17,6 +17,7 @@ import Storage from "../storage.json";
 import Categories from "../components/Categories.vue";
 import Books from "../components/Books.vue";
 import CenterSection from "../components/CenterSection.vue";
+import HeaderPart from "../components/Ui/HeaderPart.vue";
 export default {
   data() {
     return {
@@ -24,6 +25,12 @@ export default {
       newValue: "",
       books: Storage.books,
     };
+  },
+  components: {
+    HeaderPart,
+    Categories,
+    Books,
+    CenterSection,
   },
   methods: {
     makeFilter(choosen) {
@@ -55,11 +62,6 @@ export default {
         return resultAuthor;
       }
     },
-  },
-  components: {
-    Categories,
-    Books,
-    CenterSection,
   },
 };
 </script>

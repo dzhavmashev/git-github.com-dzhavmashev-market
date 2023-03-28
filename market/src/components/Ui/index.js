@@ -9,5 +9,6 @@ export default [
     LinkButton,
     ModalWindow,
     MyInput,
-    HeaderPart
+    HeaderPart,
+    MyInput
 ]

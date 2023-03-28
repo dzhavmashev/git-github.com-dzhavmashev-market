@@ -51,5 +51,4 @@ export default {
   color: grey;
   font-size: 19px;
 }
-
 </style>

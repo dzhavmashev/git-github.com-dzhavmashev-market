@@ -21,7 +21,7 @@ export default {
       newValue: "",
     };
   }
-};
+  }
 </script>
 
 <style>
@@ -30,6 +30,10 @@ export default {
 }
 .placeholder-container {
   position: relative;
+    box-sizing: border-box;
+}
+.placeholder-container {
+    position: relative;
 }
 .placeholder-container input {
   border: 1px solid black;
@@ -39,6 +43,7 @@ export default {
   font-size: 16px;
   line-height: 16px;
   height: 38px;
+  height: 37px;
   outline: 0;
   padding: 0 20px;
   width: 100%;
