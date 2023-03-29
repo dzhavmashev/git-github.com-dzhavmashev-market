@@ -15,6 +15,7 @@ export default {
 <style>
 .my-button {
   font-family: "Shadows Into Light", cursive;
+  background-color: transparent;
   width: 180px;
   height: 50px;
   padding: 5px;
@@ -22,5 +23,9 @@ export default {
   margin: 2px;
   border: none;
   cursor: pointer;
+}
+.my-button:hover {
+  color: white;
+  background-color: thistle;
 }
 </style>
