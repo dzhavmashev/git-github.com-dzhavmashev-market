@@ -17,9 +17,7 @@
 </template>
 
 <script>
-import MyInput from "./Ui/MyInput.vue";
 export default {
-  components: { MyInput },
   data() {
     return {
       newValue: "",
