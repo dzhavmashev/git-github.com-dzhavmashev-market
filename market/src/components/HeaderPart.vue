@@ -6,17 +6,17 @@
       </link-button>
     </div>
     <div class="nav_bar">
-      <slot></slot>
       <link-button>
-        <router-link class="nav_menu" to="/Adresses">Филиалы</router-link>
+        <router-link class="nav_menu" to="/">Филиалы</router-link>
       </link-button>
-      <link-button @click="funcShow">Номера</link-button>
-      <modal-window :show="show" @clickClose="funcClose"></modal-window>
+      <link-button @click="funcShow">Номера
+      </link-button>
+        <modal-window :show="show" @clickClose="funcClose"></modal-window>
       <link-button>
-        <router-link class="nav_menu" to="">Соц.сети</router-link>
+        <router-link class="nav_menu" to="/">Соц.сети</router-link>
       </link-button>
       <link-button>
-        <router-link class="mini_nav" to="">Войти</router-link>
+        <router-link class="mini_nav" to="/">Войти</router-link>
       </link-button>
     </div>
   </div>
@@ -24,29 +24,18 @@
 
 <script>
 export default {
-  name: "header-part",
   data() {
     return {
       show: false,
     };
   },
-  props: {
-    showLink: {
-      type: Boolean,
-      default: false,
-    },
-  },
   methods: {
-    funcLinks() {
-      this.$emit("update:getLink", false);
-      console.log("head");
-    },
     funcShow() {
       this.show = true;
     },
     funcClose() {
-      this.show = false;
-    },
+        this.show = false
+    }
   },
 };
 </script>
@@ -73,12 +62,6 @@ export default {
 .nav_menu {
   text-decoration: none;
   color: black;
-}
-.nav_menu:hover {
-  color: white;
-}
-.nav_menu:active {
-  color: white;
 }
 
 .mini_nav {
