@@ -41,13 +41,12 @@
       ><span class="back-button" @click="openAuthForm()"> Войти</span>
     </div>
     <button class="close-button" @click="closeModal()">
-      <img class="close-img" src="../close.png" alt="close button" />
+      <img class="close-img" src="../images/close.png" alt="close button" />
     </button>
   </div>
 </template>
 
 <script>
-// import Storage from "../storage.json";
 export default {
   data() {
     return {
