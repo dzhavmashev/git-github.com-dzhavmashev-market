@@ -2,12 +2,12 @@
   <div class="center">
     <div class="input_zone">
       <my-input type="text" @input="consLog" />
-      <my-button class="search_btn"
+      <my-button @click="findFunc" class="search_btn"
         ><img class="img_search" src="search.png" />Искать</my-button
       >
       <my-button class="filter_btn"><img src="funnel.png" /></my-button>
     </div>
-    <slot> </slot>
+    <slot></slot>
     <div class="button_zone">
       <my-button class="button">В корзину</my-button>
       <my-button class="button">Избранное</my-button>
@@ -24,13 +24,16 @@ export default {
     };
   },
   methods: {
-    consLog(newValue) {
+    findFunc() {
+      console.log(this.newValue);
+    },
+    consLog(newValue) {     // без последнего символа (удаляет последний символ при отправке)
       if (newValue.data != null) {
         this.newValue += newValue.data;
       } else {
         this.newValue = this.newValue.slice(0, -1);
       }
-      console.log(this.newValue);
+      this.$emit("searchFunc", this.newValue);
     },
   },
 };
@@ -43,11 +46,9 @@ export default {
   align-items: center;
   background-color: #d7cfe7;
 }
-
 .input_zone {
   display: flex;
 }
-
 .search_btn {
   display: flex;
   align-items: center;
@@ -58,14 +59,12 @@ export default {
 }
 .filter_btn {
   border: 1px solid black;
-  padding: 4px 7px 0px 7px;
   border-top-left-radius: 0px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 0px;
-  height: 37px;
+  height: 38px;
 }
-
 .img_search {
   filter: invert(1);
 }
@@ -76,17 +75,17 @@ export default {
 }
 .button {
   border: 1px solid black;
-  border-radius: 9px;
+  border-radius: 5px;
   padding: 7px 20px;
   font-size: 15px;
 }
 .button:hover {
-  border-radius: 5px;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .button:active {
-  transform: translateY(-2px);
+  transform: translateX(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 </style>
