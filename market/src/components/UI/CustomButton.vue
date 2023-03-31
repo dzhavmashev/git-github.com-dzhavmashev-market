@@ -1,34 +1,34 @@
 <template>
-  <div>
-    <button class="my_button">
+    <button class="custom-button">
       <slot></slot>
     </button>
-  </div>
 </template>
 
 <script>
 export default {
-  name: "my-button",
+  name: "custom-button",
 };
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
-.my_button {
+.custom-button {
   border: 1px solid black;
   padding: 0;
   font-family: "Shadows Into Light", cursive;
   background-color: transparent;
-  width: 180px;
+  width: 100%;
+  text-align: left;
   height: 50px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 18px;
   margin: 2px;
   border: none;
   cursor: pointer;
 }
-.my-button:hover {
+.custom-button:hover {
   color: white;
-  background-color: thistle;
+  background-color: #d7cfe7;
+  transition: 100ms;
 }
 </style>

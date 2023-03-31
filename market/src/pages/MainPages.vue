@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div>
-      <custom-modal v-bind:modal="modalVisible" @closeModal="closeModal" @openModal="openModal">
+      <custom-modal v-bind:modal="modalVisible" @closeModal="closeModal">
           <auth-form
           v-if="regForm === false"
           @closeModal="closeModal"
@@ -13,7 +12,7 @@
           @openAuthForm="openAuthForm"
           @checkUser="checkUser" />
           </custom-modal>
-    <header-part></header-part>
+    <header-part @openModal="openModal" @exitUser="exitUser" :showLogged='showLogged' :logged="logged"></header-part>
     <div class="content">
       <categories @sendGenre="makeFilter"></categories>
       <div class="section">
@@ -77,6 +76,9 @@ export default {
       this.logged = true;
       this.showLogged = email;
     },
+    exitUser(){
+      this.logged = false;
+    }
   },
 
   computed: {
@@ -98,24 +100,6 @@ export default {
   border: 2px solid black;
   margin: 10px;
 }
-nav {
-  background-color: white;
-  width: 200px;
-  border: 1px solid rgb(102, 100, 100);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-}
-ul {
-  margin: 0;
-  padding: 0;
-}
-li {
-  list-style: none;
-  cursor: pointer;
-}
-
 .content {
   display: flex;
 }

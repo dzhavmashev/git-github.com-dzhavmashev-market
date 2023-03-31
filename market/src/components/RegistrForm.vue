@@ -37,8 +37,8 @@
     <p class="input-message" v-if="wrongInput">Заполните все поля</p>
     <button class="continue-button" @click="addUser()">Продолжить</button>
     <div>
-      <span>Уже зарегистрировались?</span
-      ><span class="back-button" @click="openAuthForm()"> Войти</span>
+      <span>Уже зарегистрировались? </span
+      ><span class="back-button" @click="openAuthForm()">Войти</span>
     </div>
     <button class="close-button" @click="closeModal()">
       <img class="close-img" src="../images/close.png" alt="close button" />
@@ -192,5 +192,8 @@ b {
 .back-button {
   cursor: pointer;
   font-weight: 600;
+}
+.back-button:hover {
+  text-decoration: underline;
 }
 </style>

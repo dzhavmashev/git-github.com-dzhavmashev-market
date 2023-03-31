@@ -34,6 +34,7 @@ export default {
   top: 0;
   bottom: 0;
   right: 0;
+  z-index: 98;
 }
 .child {
   font-size: 18px;

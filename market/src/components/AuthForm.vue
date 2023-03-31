@@ -143,4 +143,7 @@ span {
   cursor: pointer;
   font-weight: 600;
 }
+.back-button:hover {
+  text-decoration: underline;
+}
 </style>
