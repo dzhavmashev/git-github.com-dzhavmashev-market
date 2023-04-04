@@ -30,6 +30,9 @@ export default {
     };
   },
   methods: {
+    funcLinks() {
+      this.$emit("update:getLink", false);
+    },
     funcShow() {
       this.show = true;
     },
