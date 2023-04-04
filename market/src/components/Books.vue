@@ -6,7 +6,6 @@
       <div>Цена: {{ book.price }}</div>
       <div>Дата выпуска: {{ book.releaseDate }}</div>
     </div>
-    <div v-if="books == ''" class="red_messeng">Нет результатов!</div>
     <div class="coverflow-example">
       <swiper
         class="swiper"
@@ -61,6 +60,7 @@ export default defineComponent ({
 });
 </script>
 
+<<<<<<< HEAD
 <style lang="scss" scoped>
 @import "@/@/styles/variables.scss";
 @import "@/@/styles/mixins.scss";
@@ -98,3 +98,7 @@ export default defineComponent ({
   }
 }
 </style>
+=======
+<style>
+</style>
+>>>>>>> da63efebe22a7680619d1d57eab062754a2172ad
