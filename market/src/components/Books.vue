@@ -60,7 +60,6 @@ export default defineComponent ({
 });
 </script>
 
-<<<<<<< HEAD
 <style lang="scss" scoped>
 @import "@/@/styles/variables.scss";
 @import "@/@/styles/mixins.scss";
@@ -98,7 +97,3 @@ export default defineComponent ({
   }
 }
 </style>
-=======
-<style>
-</style>
->>>>>>> da63efebe22a7680619d1d57eab062754a2172ad
