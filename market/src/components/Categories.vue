@@ -37,18 +37,16 @@ export default {
   align-items: flex-start;
   width: 20%;
 }
+
 .bar {
   font-family: "Shadows Into Light", cursive;
   font-size: 28px;
 }
+
 .btn_catg {
   display: flex;
   align-items: center;
   border: 0px solid white;
   font-size: 20px;
-}
-.btn_catg:focus {
-  color: grey;
-  font-size: 19px;
 }
 </style>
