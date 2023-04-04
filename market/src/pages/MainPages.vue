@@ -4,14 +4,15 @@
     <div class="content">
       <categories @sendGenre="makeFilter"></categories>
       <div class="section">
-        <center-part><books class="book-container" v-bind:books="filterGenres" /></center-part>  
+        <center-part
+          ><books class="book-container" v-bind:books="filterGenres"
+        /></center-part>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import HeaderPart from "../components/UI/UI/HeaderPart.vue";
 import Storage from "../storage.json";
 import Categories from "../components/Categories.vue";
 import Books from "../components/Books.vue";
@@ -24,7 +25,6 @@ export default {
     };
   },
   components: {
-    // HeaderPart,
     Categories,
     Books,
     CenterPart,

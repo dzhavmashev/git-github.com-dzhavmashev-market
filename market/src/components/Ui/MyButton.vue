@@ -12,6 +12,7 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
 .my_btn {
   font-family: "Shadows Into Light", cursive;
   cursor: pointer;
