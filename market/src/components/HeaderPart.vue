@@ -7,7 +7,7 @@
     </div>
     <div class="nav_bar">
       <link-button>
-        <router-link class="nav_menu" to="/">Филиалы</router-link>
+        <router-link class="nav_menu" to="/Adresses">Филиалы</router-link>
       </link-button>
       <link-button @click="funcShow">Номера
       </link-button>
@@ -30,6 +30,9 @@ export default {
     };
   },
   methods: {
+    funcLinks() {
+      this.$emit("update:getLink", false);
+    },
     funcShow() {
       this.show = true;
     },
