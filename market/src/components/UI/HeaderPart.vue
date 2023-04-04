@@ -39,7 +39,6 @@ export default {
   methods: {
     funcLinks() {
       this.$emit("update:getLink", false);
-      console.log("head");
     },
     funcShow() {
       this.show = true;

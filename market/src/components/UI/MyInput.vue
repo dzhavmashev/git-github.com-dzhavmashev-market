@@ -43,7 +43,6 @@ export default {
   font-size: 16px;
   line-height: 16px;
   height: 38px;
-  height: 37px;
   outline: 0;
   padding: 0 20px;
   width: 100%;

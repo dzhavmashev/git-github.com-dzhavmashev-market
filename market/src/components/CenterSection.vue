@@ -85,7 +85,7 @@ export default {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .button:active {
-  transform: translateX(-1px);
+  transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 </style>
