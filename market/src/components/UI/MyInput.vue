@@ -38,7 +38,7 @@ export default {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 16px;
-  height: 37px;
+  height: 38px;
   outline: 0;
   padding: 0 20px;
   width: 100%;
