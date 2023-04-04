@@ -6,6 +6,7 @@
       </link-button>
     </div>
     <div class="nav_bar">
+     <slot></slot>
       <link-button>
         <router-link class="nav_menu" to="/Adresses">Филиалы</router-link>
       </link-button>
@@ -24,6 +25,7 @@
 
 <script>
 export default {
+  name: "header-part",
   data() {
     return {
       show: false,

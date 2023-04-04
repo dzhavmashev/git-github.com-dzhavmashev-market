@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import HeaderPart from "../components/HeaderPart.vue";
+// import HeaderPart from "../components/UI/UI/HeaderPart.vue";
 import Storage from "../storage.json";
 import Categories from "../components/Categories.vue";
 import Books from "../components/Books.vue";
@@ -24,7 +24,7 @@ export default {
     };
   },
   components: {
-    HeaderPart,
+    // HeaderPart,
     Categories,
     Books,
     CenterPart,
