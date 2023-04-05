@@ -17,6 +17,9 @@
       required="required"
       autocomplete="current-password"
     />
+    <p class="input-message" v-if="notValidMail == true && wrongInput == false">
+      Неверный почтовый адрес
+    </p>
     <p class="input-message" v-if="wrongUser">Пользователь не найден</p>
     <p class="input-message" v-if="wrongInput">Заполните все поля</p>
     <button class="continue-button" @click="enterUser()">Войти</button>
@@ -37,6 +40,7 @@ export default {
       result: false,
       wrongInput: false,
       wrongUser: false,
+      notValidMail: false,
       email: "",
       password: "",
       usersData: [],
@@ -54,7 +58,10 @@ export default {
       let password = this.MD5(this.password);
       if (this.email == "" || this.password == "") {
         this.wrongInput = true;
+      } else if (!this.validEmail(mail)) {
+        this.notValidMail = true
       } else {
+        this.notValidMail = false;
         this.wrongInput = false;
         if (users.length !== 0) {
           for (let i = 0; i < users.length; i++) {
@@ -78,6 +85,10 @@ export default {
     openRegForm() {
       this.$emit("openRegForm", true);
     },
+    validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
   },
 };
 </script>

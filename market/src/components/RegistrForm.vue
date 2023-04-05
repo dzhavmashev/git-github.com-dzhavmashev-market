@@ -12,6 +12,9 @@
     <p class="input-message" v-if="wrongEmail">
       Почтовый адрес уже используется
     </p>
+    <p class="input-message" v-if="notValidMail == true && wrongInput == false">
+      Неверный почтовый адрес
+    </p>
     <input
       v-model="age"
       type="number"
@@ -54,6 +57,7 @@ export default {
       wrongAge: false,
       wrongPassword: false,
       wrongInput: false,
+      notValidMail: false,
       usersData: [],
       user: {},
       email: "",
@@ -90,11 +94,15 @@ export default {
       if (this.password.length !== 0 && this.password.length < 6) {
         this.wrongPassword = true;
       } else this.wrongPassword = false;
+      if (!this.validEmail(mail)) {
+        this.notValidMail = true
+      } else this.notValidMail = false;
       if (
         this.wrongAge == false &&
         this.wrongEmail == false &&
         this.wrongInput == false &&
-        this.wrongPassword == false
+        this.wrongPassword == false &&
+        this.notValidMail == false
       ) {
         this.user = {
           email: this.email,
@@ -119,6 +127,10 @@ export default {
     closeModal() {
       this.$emit("closeModal", false);
     },
+     validEmail: function (email) {
+      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
   },
 };
 </script>
