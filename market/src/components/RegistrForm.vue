@@ -111,15 +111,18 @@ export default {
         };
         this.usersData.push(this.user);
         localStorage.setItem("usersList", JSON.stringify(this.usersData));
+        localStorage.setItem("loggedUser", JSON.stringify(mail));
         this.$emit("checkUser", mail);
         this.closeModal();
       }
     },
-    MD5(d) {
-      for (var _, m = "0123456789ABCDEF", f = "", r = 0; r < d.length; r++)
-        (_ = d.charCodeAt(r)),
-          (f += m.charAt((_ >>> 4) & 15) + m.charAt(15 & _));
-      return f;
+    MD5(password) {
+      let encryptedPassword = "";
+      let alphabet = "abcdefghijklmnopqrstuvwxyz";
+      for (let i = 0; i < password.length; i++) {
+        encryptedPassword += alphabet[i % alphabet.length] + "2" + password[i];
+    }
+    return encryptedPassword.split("").reverse().join("");
     },
     openAuthForm() {
       this.$emit("openAuthForm", true);

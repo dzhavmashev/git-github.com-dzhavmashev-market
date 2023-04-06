@@ -20,7 +20,7 @@
     <p class="input-message" v-if="notValidMail == true && wrongInput == false">
       Неверный почтовый адрес
     </p>
-    <p class="input-message" v-if="wrongUser">Пользователь не найден</p>
+    <p class="input-message" v-if="wrongUser == true && wrongInput == false && notValidMail == false">Пользователь не найден</p>
     <p class="input-message" v-if="wrongInput">Заполните все поля</p>
     <button class="continue-button" @click="enterUser()">Войти</button>
     <div>
@@ -58,12 +58,11 @@ export default {
       let password = this.MD5(this.password);
       if (this.email == "" || this.password == "") {
         this.wrongInput = true;
-      } else if (!this.validEmail(mail)) {
+      } else this.wrongInput = false;
+      if (!this.validEmail(mail)) {
         this.notValidMail = true
-      } else {
-        this.notValidMail = false;
-        this.wrongInput = false;
-        if (users.length !== 0) {
+      } else this.notValidMail = false;
+        if (users.length !== 0 && this.wrongInput == false && this.notValidMail == false) {
           for (let i = 0; i < users.length; i++) {
             if (users[i].email == mail && users[i].password == password) {
               this.$emit("checkUser", mail);
@@ -71,13 +70,14 @@ export default {
             } else this.wrongUser = true;
           }
         } else this.wrongUser = true
-      }
     },
-    MD5(d) {
-      for (var _, m = "0123456789ABCDEF", f = "", r = 0; r < d.length; r++)
-        (_ = d.charCodeAt(r)),
-          (f += m.charAt((_ >>> 4) & 15) + m.charAt(15 & _));
-      return f;
+    MD5(password) {
+      let encryptedPassword = "";
+      let alphabet = "abcdefghijklmnopqrstuvwxyz";
+      for (let i = 0; i < password.length; i++) {
+        encryptedPassword += alphabet[i % alphabet.length] + "2" + password[i];
+    }
+    return encryptedPassword.split("").reverse().join("");
     },
     closeModal() {
       this.$emit("closeModal", false);
