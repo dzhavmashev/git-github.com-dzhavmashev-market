@@ -1,6 +1,18 @@
 <template>
   <div>
-    <header-part></header-part>
+      <custom-modal v-bind:modal="modalVisible" @closeModal="closeModal">
+          <auth-form
+          v-if="regForm === false"
+          @closeModal="closeModal"
+          @openRegForm="openRegForm"
+           @checkUser="checkUser" />
+          <registr-form
+          v-else
+          @closeModal="closeModal"
+          @openAuthForm="openAuthForm"
+          @checkUser="checkUser" />
+          </custom-modal>
+    <header-part @openModal="openModal" @exitUser="exitUser" :showLogged='showLogged' :logged="logged"></header-part>
     <div class="content">
       <categories @sendGenre="makeFilter"></categories>
       <div class="section">
@@ -11,20 +23,35 @@
 </template>
 
 <script>
+import HeaderPart from "../components/HeaderPart.vue";
 import Storage from "../storage.json";
 import Categories from "../components/Categories.vue";
 import Books from "../components/Books.vue";
+import AuthForm from "../components/AuthForm.vue";
+import RegistrForm from "../components/RegistrForm.vue";
+import CustomButton from "../components/UI/CustomButton.vue";
+import CustomModal from "../components/UI/CustomModal.vue";
 import CenterPart from "../components/CenterPart.vue";
 export default {
   data() {
     return {
+      navOpen: false,
+      logged: false,
+      showLogged: "",
+      regForm: false,
+      modalVisible: false,
       choosenGenre: "",
       books: Storage.books,
     };
   },
   components: {
+    HeaderPart,
     Categories,
     Books,
+    AuthForm,
+    RegistrForm,
+    CustomButton,
+    CustomModal,
     CenterPart,
   },
 
@@ -32,7 +59,28 @@ export default {
     makeFilter(choosen) {
       this.choosenGenre = choosen;
     },
+    openModal() {
+      this.modalVisible = true;
+    },
+    closeModal() {
+      this.modalVisible = false;
+      this.regForm = false;
+    },
+    openRegForm() {
+      this.regForm = true;
+    },
+    openAuthForm() {
+      this.regForm = false;
+    },
+    checkUser(email) {
+      this.logged = true;
+      this.showLogged = email;
+    },
+    exitUser(){
+      this.logged = false;
+    }
   },
+
   computed: {
     filterGenres() {
       if (this.choosenGenre) {
@@ -52,7 +100,6 @@ export default {
   border: 2px solid black;
   margin: 10px;
 }
-
 .content {
   display: flex;
 }
