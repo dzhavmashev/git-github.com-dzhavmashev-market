@@ -4,8 +4,8 @@
     <div class="content">
       <categories @sendGenre="makeFilter"></categories>
       <div class="section">
-        <center-part
-          ><books class="book-container" v-bind:books="filterGenres"
+        <center-part @searchFunc="getFilter"
+          ><books class="book-container" v-bind:books="searchPost"
         /></center-part>
       </div>
     </div>
@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       choosenGenre: "",
+      newValue: "",
       books: Storage.books,
     };
   },
@@ -34,12 +35,31 @@ export default {
     makeFilter(choosen) {
       this.choosenGenre = choosen;
     },
+    getFilter(newValue) {
+      this.newValue = newValue;
+      console.log(this.newValue);
+    },
   },
   computed: {
     filterGenres() {
       if (this.choosenGenre) {
         return this.books.filter((b) => b.code == this.choosenGenre);
       } else return this.books;
+    },
+    searchPost() {
+      const resultTitle = this.filterGenres.filter((books) =>
+        books.title.toLowerCase().includes(this.newValue.toLowerCase())
+      );
+      const resultAuthor = this.filterGenres.filter((books) =>
+        books.author.toLowerCase().includes(this.newValue.toLowerCase())
+      );
+      if (this.newValue) {
+        return resultTitle;
+      } else if (this.newValue != resultTitle) {
+        return resultAuthor;
+      } else {
+        return this.filterGenres;
+      }
     },
   },
 };

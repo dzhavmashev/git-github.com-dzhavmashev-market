@@ -14,7 +14,7 @@
       </link-button>
         <modal-window :show="show" @clickClose="funcClose"></modal-window>
       <link-button>
-        <router-link class="nav_menu" to="/">Соц.сети</router-link>
+        <router-link class="nav_menu" to="/AddCover">Соц.сети</router-link>
       </link-button>
       <link-button>
         <router-link class="mini_nav" to="/">Войти</router-link>
